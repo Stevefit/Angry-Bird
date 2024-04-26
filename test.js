@@ -1681,6 +1681,16 @@ function main() {
     var object12S = new MyObject(generateEyelidVertices(0.4, 36, 18, 0.5, -0.89, 6.51), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
     var object13S = new MyObject(generateParallelogramVertices(0.6, 0.15, 0.1, 0.7, -0.5, 6.57), cube_faces, shader_vertex_source, shader_fragment_source);
     var object14S = new MyObject(generateParallelogramVertices(0.6, 0.15, 0.1, -0.7, -0.5, 6.57), cube_faces, shader_vertex_source, shader_fragment_source);
+    var featherS = generateCurvedTube(-0.05, -0.7, 5.3, 0.5, 0.15, 30, 170, 0, 0, 0);
+    var feather1S = generateCurvedTube(-0.25, -0.7, 4.8, 0.5, 0.15, 30, 170, 0, 0, 0);
+    var feather2S = generateCurvedTube(0.15, -0.7, 4.8, 0.5, 0.15, 30, 170, 0, 0, 0);
+    var tailFeatherS = generateCurvedTube(0.2, -3.4, 3.6, 1, 0.15, 30, 270, 0, 0, 0);
+    var tailFeather2S = generateCurvedTube(-0.3, -3.4, 3.6, 1, 0.15, 30, 270, 0, 0, 0);
+    var object16S = new MyObject(featherS, feather_faces, shader_vertex_source, shader_fragment_source);
+    var object17S = new MyObject(feather1S, feather_faces, shader_vertex_source, shader_fragment_source);
+    var object18S = new MyObject(feather2S, feather_faces, shader_vertex_source, shader_fragment_source);
+    var object19S = new MyObject(tailFeatherS, feather_faces, shader_vertex_source, shader_fragment_source);
+    var object20S = new MyObject(tailFeather2S, feather_faces, shader_vertex_source, shader_fragment_source);
     objectS.child.push(object2S);
     objectS.child.push(object3S);
     objectS.child.push(object4S);
@@ -1694,6 +1704,11 @@ function main() {
     objectS.child.push(object12S);
     objectS.child.push(object13S);
     objectS.child.push(object14S);
+    objectS.child.push(object16S);
+    objectS.child.push(object17S);
+    objectS.child.push(object18S);
+    objectS.child.push(object19S);
+    objectS.child.push(object20S);
     objectS.setup();
 
 
@@ -1788,6 +1803,12 @@ function main() {
         object12S.MODEL_MATRIX = MODEL_MATRIX;
         object13S.MODEL_MATRIX = MODEL_MATRIX;
         object14S.MODEL_MATRIX = MODEL_MATRIX;
+        object16S.MODEL_MATRIX = MODEL_MATRIX;
+        object17S.MODEL_MATRIX = MODEL_MATRIX;
+        object18S.MODEL_MATRIX = MODEL_MATRIX;
+        object19S.MODEL_MATRIX = MODEL_MATRIX;
+        object20S.MODEL_MATRIX = MODEL_MATRIX;
+
         objectS.render(VIEW_MATRIX, PROJECTION_MATRIX);
 
         // // Combination Transformation (Translation & Rotation)
