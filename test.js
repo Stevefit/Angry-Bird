@@ -1667,6 +1667,12 @@ function main() {
         20, 21, 22,
         20, 22, 23
     ];
+    let x = [];
+    x= generateBallFaces(18,36);
+    for(let i=0; i<x.length;i++){
+        x.pop();
+    }
+    
     var objectS = new MyObject(generateEllipticParaboloidVerticesS(1.2, 36, 18), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
     var object2S = new MyObject(generateBodyVertices(1.8, 36, 8), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
     var object3S = new MyObject(generateEyeBallVertices(0.4, 36, 18, 0.5, -1, 6.5), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
@@ -1674,7 +1680,7 @@ function main() {
     var object5S = new MyObject(generateEyeBallIrisVertices(0.15, 36, 18, -0.4, -1, 6.87), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
     var object6S = new MyObject(generateEyeBallIrisVertices(0.15, 36, 18, 0.4, -1, 6.87), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
     var object7S = new MyObject(generateUpperBeakVertices(0.5, 36, 18), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
-    var object8S = new MyObject(generateBottomBeakVertices(0.86, 36, 18), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
+    var object8S = new MyObject(generateBottomBeakVertices(0.86, 36, 18), x, shader_vertex_source, shader_fragment_source);
     var object9S = new MyObject(generateCheekVertices(0.45, 36, 18, 0.9, -1.65, 6.4), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
     var object10S = new MyObject(generateCheekVertices(0.45, 36, 18, -0.9, -1.65, 6.4), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
     var object11S = new MyObject(generateEyelidVertices(0.4, 36, 18, -0.5, -0.89, 6.51), generateBallFaces(18, 36), shader_vertex_source, shader_fragment_source);
